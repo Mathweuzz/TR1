@@ -47,7 +47,7 @@ void CamadaDeAplicacaoTransmissora(string mensagem) {
 }
 
 void CamadaFisicaTransmissora(int quadro[], int tamanhoQuadro) {
-    int tipoDeCodificacao = 0; // alterar de acordo com o teste
+    int tipoDeCodificacao = 1; // alterar de acordo com o teste
     int* fluxoBrutoDeBits = nullptr; // trabalhar com bits!!!
     int tamanhoFluxoBrutoDeBits = 0;
 
@@ -118,7 +118,7 @@ void MeioDeComunicacao(int fluxoBrutoDeBits[], int tamanhoFluxoBrutoDeBits) {
 }   
 
 void CamadaFisicaReceptora(int quadro[], int tamanhoQuadro) {
-    int tipoDeDecodificacao = 0; // alterar de acordo com o teste
+    int tipoDeDecodificacao = 1; // alterar de acordo com o teste
     int* fluxoBrutoDeBits = nullptr; // trabalhar com bits!!!
     int tamanhoFluxoBrutoDeBits = 0;
 
