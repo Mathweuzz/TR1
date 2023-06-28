@@ -115,7 +115,7 @@ void MeioDeComunicacao(int fluxoBrutoDeBits[], int tamanhoFluxoBrutoDeBits) {
     // Aqui você pode simular a transmissão real, como adicionar ruídos, distorções, atrasos, etc.
     // Neste exemplo, o meio de comunicação simplesmente chama a próxima camada.
     CamadaFisicaReceptora(fluxoBrutoDeBits, tamanhoFluxoBrutoDeBits);
-}
+}   
 
 void CamadaFisicaReceptora(int quadro[], int tamanhoQuadro) {
     int tipoDeDecodificacao = 0; // alterar de acordo com o teste
