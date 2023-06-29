@@ -47,7 +47,7 @@ void CamadaDeAplicacaoTransmissora(string mensagem) {
 }
 
 void CamadaFisicaTransmissora(int quadro[], int tamanhoQuadro) {
-    int tipoDeCodificacao = 1; // alterar de acordo com o teste
+    int tipoDeCodificacao = 2; // alterar de acordo com o teste
     int* fluxoBrutoDeBits = nullptr; // trabalhar com bits!!!
     int tamanhoFluxoBrutoDeBits = 0;
 
@@ -112,13 +112,19 @@ int* CamadaFisicaTransmissoraCodificacaoBipolar(int quadro[], int tamanhoQuadro)
 }
 
 void MeioDeComunicacao(int fluxoBrutoDeBits[], int tamanhoFluxoBrutoDeBits) {
-    // Aqui você pode simular a transmissão real, como adicionar ruídos, distorções, atrasos, etc.
-    // Neste exemplo, o meio de comunicação simplesmente chama a próxima camada.
-    CamadaFisicaReceptora(fluxoBrutoDeBits, tamanhoFluxoBrutoDeBits);
+    int* fluxoRecebido = new int[tamanhoFluxoBrutoDeBits];
+    //emulação  básica de transmição copiando os bits para a variavel fluxo recevido
+    for (int i = 0; i < tamanhoFluxoBrutoDeBits; i++){
+        fluxoRecebido[i] = fluxoBrutoDeBits[i];
+    }
+    // chama a proxima cada com o fluxo recebido
+    CamadaFisicaReceptora(fluxoRecebido, tamanhoFluxoBrutoDeBits);
+
+    delete[] fluxoRecebido;
 }   
 
 void CamadaFisicaReceptora(int quadro[], int tamanhoQuadro) {
-    int tipoDeDecodificacao = 1; // alterar de acordo com o teste
+    int tipoDeDecodificacao = 2; // alterar de acordo com o teste
     int* fluxoBrutoDeBits = nullptr; // trabalhar com bits!!!
     int tamanhoFluxoBrutoDeBits = 0;
 
