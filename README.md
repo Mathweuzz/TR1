@@ -23,11 +23,11 @@ O programa atualmente suporta três tipos de codificação na camada física tra
 3. Navegue até o diretório clonado e compile o programa com o seguinte comando:
 
    ```bash
-   g++ -o comunicacao-camadas CamdaFisica.cpp
+   g++ -o main Simulador.cpp CamadaFisica.cpp
 
 - Execute o programa com o seguinte comando:
 
   ```bash
-  ./comunicacao-camadas
+  ./main
 
 - Siga as instruções exibidas no console para interagir com o programa.
