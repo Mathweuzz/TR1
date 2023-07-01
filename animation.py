@@ -114,5 +114,10 @@ entrada_texto.pack()
 botao = tk.Button(janela, text='Exibir Gráficos', command=exibir_graficos)
 botao.pack()
 
+def fechar_janela():
+    janela.quit()  # Encerra o loop principal da aplicação
+
+janela.protocol("WM_DELETE_WINDOW", fechar_janela)  # Define a função a ser chamada quando a janela for fechada
+
 # Inicia o loop da interface
 janela.mainloop()
