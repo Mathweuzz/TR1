@@ -102,7 +102,7 @@ def exibir_graficos():
 # Cria a janela
 janela = tk.Tk()
 janela.title('Simulação de Codificação')
-janela.geometry('500x600')
+janela.attributes('-fullscreen', True)  # Inicia a janela em tela cheia
 
 # Cria os componentes da interface
 label = tk.Label(janela, text='Digite uma mensagem:')
@@ -114,8 +114,10 @@ entrada_texto.pack()
 botao = tk.Button(janela, text='Exibir Gráficos', command=exibir_graficos)
 botao.pack()
 
-def fechar_janela():
+def fechar_janela(event=None):
     janela.quit()  # Encerra o loop principal da aplicação
+
+janela.bind('<Escape>', fechar_janela)  # Associa a função de fechar janela ao evento <Escape>
 
 janela.protocol("WM_DELETE_WINDOW", fechar_janela)  # Define a função a ser chamada quando a janela for fechada
 
