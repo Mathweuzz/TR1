@@ -1,7 +1,6 @@
 import tkinter as tk
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
-import numpy as np
 
 canvas = None  # Variável global para o objeto FigureCanvasTkAgg
 
@@ -11,7 +10,7 @@ def binarizar_mensagem():
     bits = [int(bit) for bit in mensagem_binaria]
     return bits, mensagem
 
-def codificar_NRZ(bits):
+def codificar_binaria(bits):
     return bits
 
 def codificar_manchester(bits):
@@ -36,7 +35,7 @@ def codificar_bipolar(bits):
 
 def update_graph():
     bits, mensagem = binarizar_mensagem()
-    fluxo_codificado_NRZ = codificar_NRZ(bits)
+    fluxo_codificado_binaria = codificar_binaria(bits)
     fluxo_codificado_manchester = codificar_manchester(bits)
     fluxo_codificado_bipolar = codificar_bipolar(bits)
 
@@ -54,8 +53,8 @@ def update_graph():
     plt.grid(True)
 
     plt.subplot(4, 1, 2)
-    plt.step(range(tamanho_bits), fluxo_codificado_NRZ, 'g', where='post')
-    plt.title('Codificação NRZ')
+    plt.step(range(tamanho_bits), fluxo_codificado_binaria, 'g', where='post')
+    plt.title('Codificação Binaria')
     plt.xlabel('Amostras')
     plt.ylabel('Nível')
     plt.xlim([0, tamanho_bits])
@@ -85,7 +84,7 @@ def update_graph():
 def exibir_graficos():
     global canvas  # Declara a variável como global para acessá-la dentro da função
     bits, mensagem = binarizar_mensagem()
-    fluxo_codificado_NRZ = codificar_NRZ(bits)
+    fluxo_codificado_binaria = codificar_binaria(bits)
     fluxo_codificado_manchester = codificar_manchester(bits)
     fluxo_codificado_bipolar = codificar_bipolar(bits)
 
