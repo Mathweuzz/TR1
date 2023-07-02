@@ -97,7 +97,7 @@ def exibir_graficos():
     def animate():
         update_graph()
 
-    animation = canvas.new_timer(interval=1000)  # Atualiza o gráfico a cada 1000ms (1 segundo)
+    animation = canvas.new_timer(interval=500) 
     animation.add_callback(animate)
     animation.start()
 
