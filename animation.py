@@ -79,6 +79,8 @@ def update_graph():
     plt.ylim([-1.5, 1.5])
     plt.grid(True)
 
+    plt.tight_layout()  # Adiciona espaço entre os gráficos para evitar sobreposição
+
     canvas.draw()  # Atualiza o gráfico no canvas
 
 def exibir_graficos():
